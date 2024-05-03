@@ -1,11 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Header = () => {
   const [showCredentials, setShowCredentials] = useState(false);
 
+  const [bgPlacement, setBgPlacement] = useState('bg-left')
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBgPlacement(prevPlacement => {
+        if (prevPlacement === 'bg-left') return 'bg-center';
+        if (prevPlacement === 'bg-center') return 'bg-right';
+        return 'bg-left';
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <header
-      className="min-h-screen bg-cover bg-fixed md:bg-center bg-right bg-no-repeat relative"
+      className={`min-h-screen bg-cover bg-fixed md:bg-center ${bgPlacement} bg-no-repeat relative`}
       style={{
         backgroundImage: `url('images/cover.jpeg')`,
       }}
