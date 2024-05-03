@@ -7,6 +7,7 @@ import axios from 'axios';
 
 const SubmitArt = () => {
   const [image, setImage] = useState(null);
+  const [imageUploaded, setImageUploaded] = useState(false)
   const [twitterLink, setTwitterLink] = useState('');
   const [type, setType] = useState('not_sketch');
 
@@ -23,7 +24,9 @@ const SubmitArt = () => {
       );
       toast.success('Image uploaded successfully');
       setImage(res.data.secure_url);
+      setImageUploaded(true)
     } catch (err) {
+      setImageUploaded(false)
       toast.error(
         'Something went wrong while uploading your image, please try again'
       );
@@ -36,6 +39,10 @@ const SubmitArt = () => {
     if (!image || !twitterLink || !type) {
       toast.error('Please fill in all required fields');
       return;
+    }
+
+    if (!imageUploaded){
+      toast.error("Image not uploaded, please wait for upload to complete or try again if it failed")
     }
     const artsRef = collection(db, 'arts');
     const newArt = {
