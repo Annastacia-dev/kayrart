@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 @layer base {
-  html{
+  html {
     scroll-behavior: smooth;
     @apply font-quicksand;
   }
