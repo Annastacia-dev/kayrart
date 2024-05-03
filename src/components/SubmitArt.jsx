@@ -70,7 +70,7 @@ const SubmitArt = () => {
     <div className="lg:px-5 lg:py-20 px-5 py-5 flex flex-col justify-center items-center gap-10">
       <ToastContainer />
       <h1 className="font-ojuju font-bold capitalize text-3xl bg-primary w-72 px-3 py-2">
-        submit my kayart
+        submit your kayart
       </h1>
       <form className="flex flex-col lg:w-1/2 gap-10 shadow-lg lg:p-5 p-4">
         <div className="flex flex-col gap-2">

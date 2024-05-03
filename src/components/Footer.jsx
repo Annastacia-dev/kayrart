@@ -48,7 +48,7 @@ const Footer = () => {
           href="/submit_art"
           className="hover:underline cursor-pointer hover:font-bold"
         >
-          submit my art
+          submit your art
         </a>
       </div>
     </div>
