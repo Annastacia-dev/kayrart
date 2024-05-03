@@ -10,7 +10,11 @@ export default {
   theme: {
     extend: {
       fontFamily : {
-        ojuju: ['"Ojuju", sans-serif']
+        ojuju: ['"Ojuju", sans-serif'],
+        quicksand: ['"Quicksand", sans-serif']
+      },
+      colors: {
+        primary: '#ffb94f'
       }
     },
   },
