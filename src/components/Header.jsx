@@ -12,8 +12,8 @@ const Header = () => {
       onMouseEnter={() => setShowCredentials(true)}
       onMouseLeave={() => setShowCredentials(false)}
     >
-      <div className="absolute bg-black/1 min-h-screen w-full flex justify-center">
-        <h1 className="text-white font-ojuju font-bold uppercase lg:text-6xl mt-10 text-4xl">
+      <div className="absolute bg-black/1 min-h-screen w-full flex justify-center lg:px-0 px-8">
+        <h1 className="text-white font-ojuju font-bold uppercase lg:text-6xl mt-10 text-4xl lg:leading-none leading-normal">
           amazing art of <span className="bg-primary text-black">kayra</span>
         </h1>
       </div>
