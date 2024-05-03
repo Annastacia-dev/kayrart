@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { db } from '../config/firebase';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc } from 'firebase/firestore';
 import axios from 'axios';
 
 const SubmitArt = () => {
-  const [image, setImage] = useState(null)
-  const [twitterLink, setTwitterLink] = useState('')
-  const [type, setType] = useState('not_sketch')
+  const [image, setImage] = useState(null);
+  const [twitterLink, setTwitterLink] = useState('');
+  const [type, setType] = useState('not_sketch');
 
   const handleUpload = async (e) => {
     toast.info('Uploading image');
@@ -17,14 +17,19 @@ const SubmitArt = () => {
     formData.append('upload_preset', 'afyanet');
 
     try {
-      const res = await axios.post('https://api.cloudinary.com/v1_1/dauveffyr/image/upload', formData);
-      toast.success('Image uploaded successfully')
+      const res = await axios.post(
+        'https://api.cloudinary.com/v1_1/dauveffyr/image/upload',
+        formData
+      );
+      toast.success('Image uploaded successfully');
       setImage(res.data.secure_url);
     } catch (err) {
-      toast.error('Something went wrong while uploading your image, please try again')
+      toast.error(
+        'Something went wrong while uploading your image, please try again'
+      );
       console.log(err);
     }
-  }
+  };
 
   const handleAddArt = (e) => {
     e.preventDefault();
@@ -39,16 +44,18 @@ const SubmitArt = () => {
       image,
       twitterLink,
       type,
-      approved: false
+      approved: false,
     };
     toast.info('Uploading your art');
     console.log(newArt);
     addDoc(artsRef, newArt)
       .then((docRef) => {
-        toast.success('Art added successfully, it will be displayed once approved');
-        setImage('')
-        setTwitterLink('')
-        setType('not_sketch')
+        toast.success(
+          'Art added successfully, it will be displayed once approved'
+        );
+        setImage('');
+        setTwitterLink('');
+        setType('not_sketch');
         console.log('Document written with ID: ', docRef.id);
       })
       .catch((error) => {
@@ -73,7 +80,9 @@ const SubmitArt = () => {
             type="text"
             placeholder="Twitter Link"
             value={twitterLink}
-            onChange={(e) => { setTwitterLink(e.target.value) }}
+            onChange={(e) => {
+              setTwitterLink(e.target.value);
+            }}
             className="mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none bg-transparent"
             required
           />
@@ -84,7 +93,9 @@ const SubmitArt = () => {
             id="not_sketch"
             value="not_sketch"
             checked={type === 'not_sketch'}
-            onChange={() => { setType('not_sketch') }}
+            onChange={() => {
+              setType('not_sketch');
+            }}
             className="mr-1"
           />
           <label htmlFor="not_sketch">Not Sketch</label>

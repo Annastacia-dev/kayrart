@@ -1,4 +1,22 @@
+import useFetchArts from '../data/art';
+import Loader from './Loader';
+import Art from './Art';
+
 const About = () => {
+  const { loading, arts, sketches } = useFetchArts();
+
+  const getRandomItem = (items) => {
+    const randomIndex = Math.floor(Math.random() * (items?.length || 0));
+    return items ? items[randomIndex] : null;
+  };
+
+  const randomArt = getRandomItem(arts);
+  const randomSketch = getRandomItem(sketches);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <div className="lg:px-20 lg:py-12 px-8 py-5 grid lg:grid-cols-2 gap-10">
       <div className="flex flex-col gap-4">
@@ -10,6 +28,10 @@ const About = () => {
           Kayra&apos;s journey and the inspiration behind her extraordinary hair
           transformations.
         </p>
+      </div>
+      <div className='flex gap-2'>
+        <Art art={randomArt} />
+        <Art art={randomArt} />
       </div>
     </div>
   );
