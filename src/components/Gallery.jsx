@@ -19,7 +19,7 @@ const Gallery = () => {
         Kayra&apos;s dynamic hairstyles. Each piece tells a story, reflecting
         the fusion of beauty, fahion and artistic expression.
       </p>
-      <div className="grid lg:grid-cols-4 grid-cols-2 gap-5">
+      <div className="grid lg:grid-cols-4 grid-cols-2 gap-x-5 gap-y-16">
         {arts.map((art) => {
           return <Art key={art.id} art={art} />;
         })}

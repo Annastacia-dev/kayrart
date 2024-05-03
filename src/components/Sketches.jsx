@@ -14,7 +14,7 @@ const Sketches = () => {
         sketches
       </h1>
       <p className="leading-7 lg:w-3/4">No colors, just amazing art.</p>
-      <div className="grid lg:grid-cols-4 grid-cols-2 gap-5">
+      <div className="grid lg:grid-cols-4 grid-cols-2 gap-x-5 gap-y-16">
         {sketches.map((sketch) => {
           return <Art key={sketch.id} art={sketch} />;
         })}
