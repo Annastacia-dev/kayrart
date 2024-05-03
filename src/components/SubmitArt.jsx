@@ -27,18 +27,16 @@ const SubmitArt = () => {
       toast.error(
         'Something went wrong while uploading your image, please try again'
       );
-      console.log(err);
+      console.error(err);
     }
   };
 
-  const handleAddArt = (e) => {
+  const handleAddArt = async (e) => {
     e.preventDefault();
     if (!image || !twitterLink || !type) {
       toast.error('Please fill in all required fields');
       return;
     }
-
-    console.log('adding art');
     const artsRef = collection(db, 'arts');
     const newArt = {
       image,
@@ -47,20 +45,18 @@ const SubmitArt = () => {
       approved: false,
     };
     toast.info('Uploading your art');
-    console.log(newArt);
-    addDoc(artsRef, newArt)
-      .then((docRef) => {
-        toast.success(
-          'Art added successfully, it will be displayed once approved'
-        );
-        setImage(null);
-        setTwitterLink('');
-        setType('not_sketch');
-        console.log('Document written with ID: ', docRef.id);
-      })
-      .catch((error) => {
-        console.error('Error adding document: ', error);
-      });
+    try {
+      await addDoc(artsRef, newArt);
+      toast.success(
+        'Art submitted successfully, it will be displayed once approved'
+      );
+      setImage(null);
+      setTwitterLink('');
+      setType('not_sketch');
+    } catch (error) {
+      console.error('Error adding document: ', error);
+      toast.error('Failed to submit art, please try again');
+    }
   };
 
   return (
@@ -90,6 +86,7 @@ const SubmitArt = () => {
         <div className="mt-2">
           <input
             type="radio"
+            name="type"
             id="not_sketch"
             value="not_sketch"
             checked={type === 'not_sketch'}
@@ -101,6 +98,7 @@ const SubmitArt = () => {
           <label htmlFor="not_sketch">Not Sketch</label>
           <input
             type="radio"
+            name="type"
             id="sketch"
             value="sketch"
             checked={type === 'sketch'}
