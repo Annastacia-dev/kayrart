@@ -53,7 +53,7 @@ const SubmitArt = () => {
         toast.success(
           'Art added successfully, it will be displayed once approved'
         );
-        setImage('');
+        setImage(null);
         setTwitterLink('');
         setType('not_sketch');
         console.log('Document written with ID: ', docRef.id);
@@ -113,7 +113,7 @@ const SubmitArt = () => {
           onClick={handleAddArt}
           className="mt-4 px-4 py-2 bg-primary text-black font-bold rounded-md hover:bg-black hover:text-primary"
         >
-          Upload
+          Submit
         </button>
       </form>
     </div>
