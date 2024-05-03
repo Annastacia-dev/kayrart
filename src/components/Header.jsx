@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react';
 const Header = () => {
   const [showCredentials, setShowCredentials] = useState(false);
 
-  const [bgPlacement, setBgPlacement] = useState('bg-left')
+  const [bgPlacement, setBgPlacement] = useState('bg-left');
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setBgPlacement(prevPlacement => {
+      setBgPlacement((prevPlacement) => {
         if (prevPlacement === 'bg-left') return 'bg-center';
         if (prevPlacement === 'bg-center') return 'bg-right';
         return 'bg-left';

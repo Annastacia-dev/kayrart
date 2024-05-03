@@ -3,7 +3,6 @@ import About from './components/About';
 import Gallery from './components/Gallery';
 import Uzumaki from './components/Uzumaki';
 import Sketches from './components/Sketches';
-import Footer from './components/Footer';
 
 function App() {
   return (
@@ -13,7 +12,6 @@ function App() {
       <Gallery />
       <Uzumaki />
       <Sketches />
-      <Footer />
     </>
   );
 }
