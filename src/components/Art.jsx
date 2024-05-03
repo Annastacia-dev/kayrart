@@ -13,7 +13,7 @@ const Art = ({ art }) => {
           @{extractTwitterUsername(art?.twitterLink)}
         </a>
       </button>
-      <img src={art?.image} className="rounded-md" />
+      <img src={art?.image} className="rounded-md h-full object-cover" loading='lazy' />
     </div>
   );
 };

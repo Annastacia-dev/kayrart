@@ -31,7 +31,7 @@ const About = () => {
       </div>
       <div className="flex gap-4">
         <Art art={randomArt} />
-        <Art art={randomArt} />
+        <Art art={randomSketch} />
       </div>
     </div>
   );
