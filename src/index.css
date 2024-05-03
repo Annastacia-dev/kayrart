@@ -10,14 +10,6 @@
     @apply font-quicksand;
     @apply bg-gray-100;
   }
-
-  .art-details {
-    display: none;
-  }
-
-  .art:hover .art-details {
-    display: flex;
-  }
 }
 
 .glass {

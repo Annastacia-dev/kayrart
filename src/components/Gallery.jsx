@@ -10,7 +10,7 @@ const Gallery = () => {
   }
 
   return (
-    <div className="lg:px-20 lg:py-12 px-8 py-5 flex flex-col gap-5">
+    <div className="lg:px-20 lg:py-12 px-8 py-5 flex flex-col gap-10">
       <h1 className="font-ojuju font-bold capitalize text-3xl bg-primary w-44 px-3 py-1">
         art gallery
       </h1>

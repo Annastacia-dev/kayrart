@@ -29,7 +29,7 @@ const About = () => {
           transformations.
         </p>
       </div>
-      <div className='flex gap-2'>
+      <div className="flex gap-4">
         <Art art={randomArt} />
         <Art art={randomArt} />
       </div>
