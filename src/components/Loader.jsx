@@ -1,7 +1,9 @@
+import { FiLoader } from 'react-icons/fi';
+
 const Loader = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-primary"></div>
+    <div className="flex justify-center items-center py-5">
+      <FiLoader className="animate-spin w-16 h-16 text-primary" />
     </div>
   );
 };

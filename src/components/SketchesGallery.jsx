@@ -4,12 +4,12 @@ import Loader from './Loader';
 import Art from './Art';
 import Pagination from './Pagination';
 
-const ArtGallery = () => {
-  const { loading, arts } = useFetchArts();
+const SketchesGallery = () => {
+  const { loading, sketches } = useFetchArts();
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
-  const totalItems = arts.length;
+  const totalItems = sketches.length;
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -26,11 +26,11 @@ const ArtGallery = () => {
       </a>
       <div className="flex flex-col gap-10 mt-10">
         <h1 className="font-ojuju font-bold capitalize text-3xl bg-primary w-44 px-3 py-1">
-          art gallery
+          sketches
         </h1>
         <div className="grid lg:grid-cols-4 grid-cols-2 gap-x-5 gap-y-16">
-          {arts.map((art) => {
-            return <Art key={art.id} art={art} />;
+          {sketches.map((sketch) => {
+            return <Art key={sketch.id} art={sketch} />;
           })}
         </div>
         <Pagination totalItems={totalItems } itemsPerPage={itemsPerPage} onPageChange={handlePageChange} />
@@ -39,4 +39,4 @@ const ArtGallery = () => {
   );
 };
 
-export default ArtGallery;
+export default SketchesGallery;

@@ -19,6 +19,9 @@ const Sketches = () => {
           return <Art key={sketch.id} art={sketch} />;
         })}
       </div>
+      <button className="bg-primary font-bold w-40 px-4 py-2 rounded">
+        <a href="sketches">View All</a>
+      </button>
     </div>
   );
 };

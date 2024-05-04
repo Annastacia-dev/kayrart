@@ -50,6 +50,18 @@ const Footer = () => {
         >
           submit your art
         </a>
+        <a
+          href="/art_gallery"
+          className="hover:underline cursor-pointer hover:font-bold"
+        >
+          art gallery
+        </a>
+        <a
+          href="/sketches"
+          className="hover:underline cursor-pointer hover:font-bold"
+        >
+          sketches
+        </a>
       </div>
     </div>
   );

@@ -20,10 +20,13 @@ const Gallery = () => {
         the fusion of beauty, fahion and artistic expression.
       </p>
       <div className="grid lg:grid-cols-4 grid-cols-2 gap-x-5 gap-y-16">
-        {arts.map((art) => {
+        {arts.slice(0, 8).map((art) => {
           return <Art key={art.id} art={art} />;
         })}
       </div>
+      <button className="bg-primary font-bold w-40 px-4 py-2 rounded">
+        <a href="art_gallery">View All</a>
+      </button>
     </div>
   );
 };

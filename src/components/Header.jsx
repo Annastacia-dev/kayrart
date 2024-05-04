@@ -31,18 +31,18 @@ const Header = () => {
           amazing art of <span className="bg-primary text-black">kayra</span>
         </h1>
       </div>
-     
-        <div className="glass px-4 py-2 h-20 rounded-lg font-bold absolute bottom-4 right-2 flex justify-center items-center text-white">
-          Cover art by{' '}
-          <a
-            href="https://twitter.com/deanne_go"
-            target="_blank"
-            className="hover:underline hover:text-primary cursor-pointer ml-1"
-          >
-            {' '}
-            @deanne_go
-          </a>
-        </div>
+
+      <div className="glass px-4 py-2 h-20 rounded-lg font-bold absolute bottom-4 right-2 flex justify-center items-center text-white">
+        Cover art by{' '}
+        <a
+          href="https://twitter.com/deanne_go"
+          target="_blank"
+          className="hover:underline hover:text-primary cursor-pointer ml-1"
+        >
+          {' '}
+          @deanne_go
+        </a>
+      </div>
     </header>
   );
 };
